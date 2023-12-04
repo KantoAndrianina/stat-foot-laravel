@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\StatController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/show-stats-domicile', [StatController::class, 'showStatsDom']);
+Route::get('/show-stats-exterieur', [StatController::class, 'showStatsExt']);
+Route::get('/show-stats-general', [StatController::class, 'showStatsGen']);
+
+
